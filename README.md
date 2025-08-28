@@ -1,14 +1,14 @@
 # Dream-Interpreter
 
-# 🌙 Dream Interpreter — RAG + Groq + Text‑to‑Video (Notebook Edition)
+#  Dream Interpreter — RAG + Groq + Text‑to‑Video (Notebook Edition)
 
 This repo contains a **notebook‑first** dream‑interpreter built with **LangChain**, **hybrid retrieval (BM25 + FAISS)**, **BAAI/BGE embeddings**, and **Groq LLMs**. It ships with a polished **Gradio Blocks** UI (dark mode + custom CSS) and an optional **text‑to‑video** step via **fal.ai** (fast‑SVD), which turns the interpretation into a short clip.
 
-> ✅ This README is tailored to the uploaded notebook (`Dream Interpreter code.ipynb`). If you later refactor into a package, ping me and I’ll convert this to a standard multi‑module README.
+> This README is tailored to the uploaded notebook (`Dream Interpreter code.ipynb`). If you later refactor into a package, ping me and I’ll convert this to a standard multi‑module README.
 
 ---
 
-## ✨ What it does
+## What it does
 
 * **Interprets a pasted dream** using a **RAG pipeline** grounded in your **PDF/CSV** sources.
 * **Loads sources from** `/content/Dream data` (Colab‑style path) using `PyMuPDFLoader` (PDF) and `CSVLoader`.
@@ -21,7 +21,7 @@ This repo contains a **notebook‑first** dream‑interpreter built with **LangC
 
 ---
 
-## 🧱 Architecture (Notebook)
+## Architecture (Notebook)
 
 ```
 initialize_dream_interpreter()
@@ -45,16 +45,16 @@ launch_app()
 
 ---
 
-## 📁 Files
+## Files
 
 * `Dream Interpreter code.ipynb` — complete pipeline (data loading → retrieval → LLM → UI → video).
 * `/content/Dream data/` — **required in Colab**. Put your Freud/Jung PDFs and any CSV notes here.
 
-👉 If you’re running **locally**, create a folder (e.g., `data/`) and update the variable `path_data` in the notebook from `"/content/Dream data"` to your local path.
+ If you’re running **locally**, create a folder (e.g., `data/`) and update the variable `path_data` in the notebook from `"/content/Dream data"` to your local path.
 
 ---
 
-## 🔑 Secrets & Environment
+## Secrets & Environment
 
 The notebook currently reads secrets from **Colab** `userdata`:
 
@@ -74,7 +74,7 @@ Load with `python-dotenv` or set in your shell before running.
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### A) Run in Google Colab (quickest)
 
@@ -104,7 +104,7 @@ pip install -U langchain langchain-community gradio sentence-transformers \
 
 ---
 
-## 🖥️ UI Overview
+## UI Overview
 
 * **Dream input** (`Textbox`) → **Interpret** (`Button`)
 * **Output**: Markdown interpretation with **citations** (document index + snippet)
@@ -113,7 +113,7 @@ pip install -U langchain langchain-community gradio sentence-transformers \
 
 ---
 
-## 🧩 Key Functions (as implemented)
+## Key Functions (as implemented)
 
 * `initialize_dream_interpreter()` — loads files, builds BM25 + FAISS, sets `ChatGroq`
 * `interpret_dream(dream_text)` — runs retrieval + LLM to produce (interpretation, video\_prompt)
@@ -122,7 +122,7 @@ pip install -U langchain langchain-community gradio sentence-transformers \
 
 ---
 
-## ⚙️ Configuration Tips
+## Configuration Tips
 
 * **Chunking**: `chunk_size=256`, `chunk_overlap=50` (token‑light, good recall); raise size for longer quotes.
 * **Retriever k**: `bm25_retriever.k = 5` (match FAISS top‑k for balanced fusion).
@@ -132,7 +132,7 @@ pip install -U langchain langchain-community gradio sentence-transformers \
 
 ---
 
-## 🧪 Evaluate (lightweight)
+##  Evaluate (lightweight)
 
 Add a small list of (query, expected source ids) and verify:
 
@@ -141,7 +141,7 @@ Add a small list of (query, expected source ids) and verify:
 
 ---
 
-## 📦 Suggested Requirements (pin as needed)
+##  Suggested Requirements (pin as needed)
 
 ```txt
 langchain>=0.2.0
@@ -159,7 +159,7 @@ python-dotenv>=1.0.1
 
 ---
 
-## 🧯 Troubleshooting
+##  Troubleshooting
 
 * **No documents found**: ensure your files are inside `/content/Dream data` (or update `path_data`).
 * **Groq key not picked up**: in Colab secrets, the notebook expects `GROQ_API_KEy` (note the lowercase `y`).
@@ -169,13 +169,13 @@ python-dotenv>=1.0.1
 
 ---
 
-## 📜 License
+##  License
 
 MIT (or your preferred license).
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 * BAAI **BGE** family for embeddings & reranking
 * **Groq** for low‑latency LLM inference
