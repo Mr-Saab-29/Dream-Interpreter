@@ -4,8 +4,6 @@
 
 This repo contains a **notebook‑first** dream‑interpreter built with **LangChain**, **hybrid retrieval (BM25 + FAISS)**, **BAAI/BGE embeddings**, and **Groq LLMs**. It ships with a polished **Gradio Blocks** UI (dark mode + custom CSS) and an optional **text‑to‑video** step via **fal.ai** (fast‑SVD), which turns the interpretation into a short clip.
 
-> This README is tailored to the uploaded notebook (`Dream Interpreter code.ipynb`). If you later refactor into a package, ping me and I’ll convert this to a standard multi‑module README.
-
 ---
 
 ## What it does
